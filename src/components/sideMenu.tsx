@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -27,9 +27,13 @@ const useStyles = makeStyles((theme: Theme) =>
 function SideMenu() {
 
   const classes = useStyles();
+  
 
   /* user state */
-  const user = true
+  const [user, setUser] = useState(false)
+
+  const loginFunction = () => setUser(true)
+
 
   const ref = useRef<HTMLDivElement>(document.createElement('div'));
   const logoRef = useRef<HTMLDivElement>(document.createElement('div'));
@@ -70,7 +74,7 @@ function SideMenu() {
                 <h2>James GH</h2>
                 <div className='form-login'>
                   <form className={classes.root} noValidate autoComplete="off">
-                    <button className="btn-main">
+                    <button className="btn-main" onClick={() => setUser(false)}>
                       Logout
                     </button>
                   </form>
@@ -101,7 +105,7 @@ function SideMenu() {
                         autoComplete="current-password"
                         variant="filled"
                       />
-                      <button className="btn-main">
+                      <button className="btn-main" onClick={loginFunction}>
                         Login
                       </button>
                     </form>
@@ -144,8 +148,8 @@ function SideMenu() {
                         autoComplete="current-password"
                         variant="filled"
                       />
-                      <button className="btn-main">
-                        Login
+                      <button className="btn-main" onClick={loginFunction} >
+                        Register
                       </button>
                     </form>
                   </div>

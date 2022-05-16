@@ -221,6 +221,10 @@ h1:hover {
   margin: 0;
 }
 
+audio {
+  width: 100%;
+}
+
 /* buttons */
 .btn-main {
   left: -1%;
@@ -235,6 +239,10 @@ h1:hover {
   border: 0.5px solid var(--main-color) !important;
   border-radius:0rem !important;
   cursor: pointer;
+}
+.btn-main a {
+  color: var(--main-color) !important;
+  text-decoration: none
 }
 
 .controls_left .btn-main {
@@ -253,8 +261,7 @@ h1:hover {
 }
 
 /* playlist */
-#playlist,
-audio {
+#playlist {
   background: #666;
   width: 100%;
   padding: 20px;

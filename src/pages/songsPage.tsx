@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import NavBar from '../components/navbar'
 import SideMenu from '../components/sideMenu'
 
-import { Container } from '@material-ui/core';
+import { Container } from '@material-ui/core'
 
 
 
@@ -13,15 +13,14 @@ function AlbumsPage() {
   const { idAlbum } = useParams() as { idAlbum: string };
 
   useEffect(() => {
-    async function getAlbums() {
-      // 6281949fd86382a1663b22a9
+    async function getAlbum() {
       const url = `http://3.218.67.164:10035/album/${idAlbum}/song`
       const albums = await fetch(url).then((res) => res.json())
       
       setAlbumData(albums.data.songs)
     }
-    getAlbums()
-  },[])
+    getAlbum()
+  },[idAlbum])
 
   
   return (
