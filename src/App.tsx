@@ -6,6 +6,7 @@ import {
 
 import Home from './pages/home';
 import AlbumsPage from './pages/albumsPage'
+import SongsPage from './pages/songsPage'
 
 import './css/index.css'
 import './css/player.css'
@@ -15,7 +16,9 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/albums" element={<AlbumsPage/>} />
+        <Route path="/albums" element={<AlbumsPage />} />
+        <Route path="/songs" element={<SongsPage/>} />
+      
       </Routes>
     </>
   );

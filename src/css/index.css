@@ -2,6 +2,7 @@
   --main-color: #ea6a63f7;
   --second-color: #81D6D9;
   --thirth-color: #ea6a6369;
+  --logo-color: #FCED06;
 }
 
 
@@ -12,7 +13,6 @@ body {
   background-repeat: no-repeat;
   font-family: 'Play', sans-serif;
   min-height: 100vh;
-  /* margin: -14px 0 0 0; /* quitar */
 }
 
 /* clases generales */
@@ -20,13 +20,6 @@ body {
   display: none;
 }
 
-/* logo */
-.logo {
-  position: absolute;
-  left: 1.5rem;
-  color: #FCED06;
-
-}
 
 /* Navegacion */
 
@@ -88,6 +81,12 @@ body {
   color: var(--second-color);
 }
 
+h1 {
+  color: var(--main-color)
+}
+h1:hover {
+  color: var(--second-color)
+}
 /* dashboard de discos */
 .section-discks {
   display: flex;
@@ -139,6 +138,80 @@ body {
   color: var(--main-color);
 }
 
+/* side menu */
+.side-menu-container {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000c4;
+  transition: all 2.5s ease;
+}
+.side-menu {
+  background-color:#070707;
+  color: white !important;
+  width: 300px;
+  height: 100%;
+  position: absolute;
+  z-index: 4;
+}
+.side-menu-container .MuiDivider-root {
+  background-color: rgb(248 248 248 / 12%) !important;
+  color: white;
+}
+.close-menu .MuiIconButton-root {
+  color: white;
+}
+
+.MuiListItem-divider {
+  border-bottom: 1px solid rgb(247 239 239 / 12%) !important;
+}
+.slide {
+  width: 0px;
+}
+.close-menu {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.MuiFilledInput-underline:after {
+  border-bottom: 2px solid var(--second-color);
+}
+.MuiInputBase-input {
+  background:var(--logo-color) !important;
+  color:#030303 !important
+}
+.MuiTypography-body1 {
+  font-family: 'Play', sans-serif !important;
+}
+
+
+
+/* logo */
+.logo {
+  position: absolute;
+  left: 1.5rem;
+  color: #FCED06;
+  top: 0;
+  z-index: 3;
+  cursor: pointer;
+}
+
+/* user side menu */
+
+.user-menu {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+.user-menu img {
+  border-radius: 25px;
+  max-width: 100px;
+}
+
+
 /* player */
 .options h6,
 .options ul li {
@@ -154,13 +227,15 @@ body {
 .btn-main {
   left: -1%;
   top: 86%;
-  background: #953433;
-  color: var(--main-color);
-  font-weight: 800;
-  width: 100px;
+  background: #953433 !important;
+  color: var(--main-color) !important;
+  font-family: 'Play', sans-serif !important;
+  font-weight: 800 !important;
+  width: 100px ;
   height: 30px;
   font-size: 18px;
-  border: 0.5px solid var(--main-color);
+  border: 0.5px solid var(--main-color) !important;
+  border-radius:0rem !important;
   cursor: pointer;
 }
 

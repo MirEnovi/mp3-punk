@@ -8,7 +8,7 @@ import { Container } from '@material-ui/core';
 
 
 
-function AlbumsPage() {
+function SongsPage() {
   const discks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6];
   
   return (
@@ -16,7 +16,7 @@ function AlbumsPage() {
       <div className="border-nav"></div>
       <NavBar />
       <SideMenu />
-      <h1>Albums</h1>
+      <h1>Canciones</h1>
       <div className="section-discks">
         {discks.map((disck) => {
           return <CardAlbum />;
@@ -26,4 +26,4 @@ function AlbumsPage() {
   );
 }
 
-export default AlbumsPage;
+export default SongsPage;

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 
@@ -6,24 +7,21 @@ function NavBar() {
   return (
     <div className="nav-container">
       <ul>
+
         <li>
           <a href='/' className="btn-nav">1</a>
         </li>
         <li>
-          <a href='/' className="active"> sound</a>
+          <Link to="/">Player</Link>
+          {/* <a href='/' className="active"> Player</a> */}
         </li>
         <li>
-          <a href='/' >link</a>
+          <Link to="/songs">Songs</Link>
         </li>
         <li>
-          <a href='/'>link</a>
+          <Link to="/albums">Albums</Link>
         </li>
-        <li>
-          <a href='/'>link</a>
-        </li>
-        <li>
-          <a href='/'>link</a>
-        </li>
+        
         <li>
           <a href='/' className="btn-nav">3</a>
         </li>
