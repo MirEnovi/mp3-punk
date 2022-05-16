@@ -5,10 +5,6 @@ import Player from '../components/player'
 
 import { Container } from '@material-ui/core';
 
-import '../css/index.css'
-import '../css/player.css'
-
-
 
 function Home() {
 

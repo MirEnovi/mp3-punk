@@ -7,10 +7,6 @@
   --thirth-color: #ea6a6369;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 .b_overlay {
   position: fixed;
   /* background: rgba(69, 195, 155, 0.64); */
