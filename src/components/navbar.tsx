@@ -11,17 +11,14 @@ function NavBar() {
         <li>
           <a href='/' className="btn-nav">1</a>
         </li>
-        <li>
-          <Link to="/">Player</Link>
-          {/* <a href='/' className="active"> Player</a> */}
-        </li>
-        <li>
-          <Link to="/songs">Songs</Link>
-        </li>
+        
         <li>
           <Link to="/albums">Albums</Link>
         </li>
         
+        <li>
+          <Link to="/">5 GIDA</Link>
+        </li>
         <li>
           <a href='/' className="btn-nav">3</a>
         </li>

@@ -4,7 +4,7 @@ import {
     Route,
   } from 'react-router-dom';
 
-import Home from './pages/home';
+import PlayerPage from './pages/playerPage';
 import AlbumsPage from './pages/albumsPage'
 import SongsPage from './pages/songsPage'
 
@@ -15,10 +15,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<AlbumsPage />} />
         <Route path="/albums" element={<AlbumsPage />} />
-        <Route path="/songs" element={<SongsPage/>} />
-      
+        <Route path="/album/:idAlbum" element={<SongsPage/>} />
+        <Route path="/player/:idSong" element={<PlayerPage />} />
       </Routes>
     </>
   );

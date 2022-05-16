@@ -643,7 +643,7 @@ i {
 body .player_inner,
 body .player_inner__middle .cube {
   position: absolute;
-  top: 58%;
+  top: 50%;
   z-index: 1;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);

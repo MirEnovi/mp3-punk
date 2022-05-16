@@ -71,22 +71,23 @@ body {
   color: #509a9c;
   border: 0.5px solid var(--second-color);
 }
-
+a:-webkit-any-link {
+  text-decoration: none
+}
 /* conteiner  */
 .body-container {
   text-align: center;
 }
-
 .body-container h3.title-section {
   color: var(--second-color);
 }
-
 h1 {
   color: var(--main-color)
 }
 h1:hover {
   color: var(--second-color)
 }
+
 /* dashboard de discos */
 .section-discks {
   display: flex;
@@ -187,8 +188,6 @@ h1:hover {
   font-family: 'Play', sans-serif !important;
 }
 
-
-
 /* logo */
 .logo {
   position: absolute;
@@ -200,7 +199,6 @@ h1:hover {
 }
 
 /* user side menu */
-
 .user-menu {
   display: flex;
   flex-direction:column;
@@ -254,6 +252,36 @@ h1:hover {
   clip-path: polygon(0% 0%, 100% 0, 100% 66%, 80% 100%, 0% 100%);
 }
 
+/* playlist */
+#playlist,
+audio {
+  background: #666;
+  width: 100%;
+  padding: 20px;
+  list-style: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#playlist a {
+  text-decoration: none;
+}
+
+#playlist .active a {
+  color: #5DB0E6;
+  text-decoration: none;
+}
+
+#playlist li a {
+  color: var(--main-color);
+  background: #333;
+  padding: 5px;
+  display: block;
+}
+
+#playlist li a:hover {
+  text-decoration: none;
+  color: var(--second-color);
+}
 
 @media screen and (max-width: 600px) {
   .card-album img {
@@ -261,7 +289,9 @@ h1:hover {
   }
 
   .logo {
-    display: none;
+    top: 30px;
+    left: auto;
+    right: 25px;
   }
 
 }

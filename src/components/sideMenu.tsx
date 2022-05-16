@@ -9,7 +9,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
-import Button from '@material-ui/core/Button';
+/* import Button from '@material-ui/core/Button'; */
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -70,19 +70,6 @@ function SideMenu() {
                 <h2>James GH</h2>
                 <div className='form-login'>
                   <form className={classes.root} noValidate autoComplete="off">
-                    {/* <Button
-                      className="btn-main"
-                      variant="contained"
-                      component="label"
-                    >
-                      Upload File
-                      <input
-                        type="file"
-                        hidden
-                      />
-                    </Button> */}
-                    
-                    
                     <button className="btn-main">
                       Logout
                     </button>

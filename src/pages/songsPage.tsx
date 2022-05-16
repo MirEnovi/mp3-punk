@@ -1,29 +1,55 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom'
 
 import NavBar from '../components/navbar'
-import CardAlbum from '../components/cardAlbum'
 import SideMenu from '../components/sideMenu'
 
 import { Container } from '@material-ui/core';
 
 
 
-function SongsPage() {
-  const discks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6];
+function AlbumsPage() {
+  const [albumData, setAlbumData] = useState([])
+  const { idAlbum } = useParams() as { idAlbum: string };
+
+  useEffect(() => {
+    async function getAlbums() {
+      // 6281949fd86382a1663b22a9
+      const url = `http://3.218.67.164:10035/album/${idAlbum}/song`
+      const albums = await fetch(url).then((res) => res.json())
+      
+      setAlbumData(albums.data.songs)
+    }
+    getAlbums()
+  },[])
+
   
   return (
     <Container maxWidth="sm">
       <div className="border-nav"></div>
       <NavBar />
       <SideMenu />
-      <h1>Canciones</h1>
+      <h1>Album</h1>
       <div className="section-discks">
-        {discks.map((disck) => {
-          return <CardAlbum />;
-        })}
+        <ul id="playlist">
+          {
+            albumData.map((song, i) => {
+              console.log(song);
+              return (<li key={i}>
+                <Link to={{
+                  pathname: `/player/${song['_id']}`
+                }}>
+                  {song['album']['albumName']} - {song['name']}
+                </Link>
+                
+              </li>)
+            })
+          }
+          
+      </ul>
       </div> 
     </Container>
   );
 }
 
-export default SongsPage;
+export default AlbumsPage;

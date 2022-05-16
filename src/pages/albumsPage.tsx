@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 
 import NavBar from '../components/navbar'
 import CardAlbum from '../components/cardAlbum'
@@ -9,7 +9,17 @@ import { Container } from '@material-ui/core';
 
 
 function AlbumsPage() {
-  const discks = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6];
+  const [albumsData, setAlbums] = useState([])
+  useEffect(() => {
+    async function getAlbums() {
+      const url = `http://3.218.67.164:10035/album`
+      const albums = await fetch(url).then((res) => res.json())
+      // console.log(albums.data.album);
+      setAlbums(albums.data.album)
+    }
+    getAlbums()
+  }, [])
+
   
   return (
     <Container maxWidth="sm">
@@ -18,8 +28,8 @@ function AlbumsPage() {
       <SideMenu />
       <h1>Albums</h1>
       <div className="section-discks">
-        {discks.map((disck) => {
-          return <CardAlbum />;
+        {albumsData.map((disck, i) => {
+          return <CardAlbum album={disck} key={i}/>;
         })}
       </div> 
     </Container>

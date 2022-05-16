@@ -1,15 +1,21 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
-function CardAlbum() {
+function CardAlbum(props:any) {
+  const { album } = props
+  
   return (
-    <div className="card-album">
-      <h3>titulo del disco</h3>
+    <Link to={{
+      pathname: `/album/${album._id}`
+    }}>
+      <div className="card-album">
+        <h3>{ album.albumName}</h3>
 
-      <img
-        src="https://www.infobae.com/new-resizer/CeFvsGQ94WSWz-DMRnS7gDJpoPU=/1200x900/filters:format(webp):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/TDDXH7SIYBAE3CONDXS3VBUONI.jpg"
-        alt="disco"
-      />
-    </div>
+        <img
+          src={album.image}
+          alt="disco"
+        />
+      </div>
+    </Link>
   );
 }
 
